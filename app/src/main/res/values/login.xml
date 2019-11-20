@@ -1,0 +1,8 @@
+<resources>
+    <string name="title_activity_login">Login</string>
+    <string name="login_button_title">Login</string>
+    <string name="invalid_username">Please enter valid username</string>
+    <string name="invalid_password">Please enter valid password</string>
+    <string name="invalid_credentials">"Incorrect username or password"</string>
+
+</resources>

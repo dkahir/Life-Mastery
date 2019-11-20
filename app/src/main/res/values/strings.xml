@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Life Mastery</string>
+    <string name="title_habit">Habit</string>
+    <string name="title_journal">Journal</string>
+    <string name="title_mood">Mood Regulator</string>
+    <string name="title_blog">Blog</string>
+    <string name="title_profile">Profile</string>
+
+    <string name="title_activity_live_track">Live</string>
+    <string name="title_activity_alerts">Alerts</string>
+</resources>

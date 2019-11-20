@@ -1,0 +1,27 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=12:0B:FB:C0:34:A0:48:0F:85:6B:62:D7:68:E2:1F:C3:13:C3:A9:44%3Bcom.baelleaf.track.ui.livetrack
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    12:0B:FB:C0:34:A0:48:0F:85:6B:62:D7:68:E2:1F:C3:13:C3:A9:44
+
+    SHA-1 certificate fingerprint:
+    12:0B:FB:C0:34:A0:48:0F:85:6B:62:D7:68:E2:1F:C3:13:C3:A9:44
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    Web link for the key https://console.developers.google.com/apis/credentials?project=bionic-baton-248813
+    -->
+    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">
+        AIzaSyCrkxSIzZ95Zow-l7L-TeYDx53pWZ_tpaQ
+    </string>
+</resources>
