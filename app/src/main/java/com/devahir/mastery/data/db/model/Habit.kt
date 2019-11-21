@@ -9,6 +9,6 @@ data class Habit(
     val name: String,
     val description: String,
     val isDeleted: Boolean,
-    val promised: Boolean?
+    val promised: Boolean
 
 )

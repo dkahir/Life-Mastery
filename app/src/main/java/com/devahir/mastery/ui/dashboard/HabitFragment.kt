@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.devahir.mastery.R
+import com.devahir.mastery.data.db.model.Habit
 import com.devahir.mastery.ui.base.BaseFragment
+import com.devahir.mastery.ui.component.BottomSheetInfoDialog
 import com.devahir.mastery.ui.factory.IntentFactory
 import com.devahir.mastery.utils.Screen
 import javax.inject.Inject
@@ -25,6 +27,7 @@ class HabitFragment : BaseFragment() {
         activityComponent.inject(this)
         habitViewModel =
             ViewModelProviders.of(this, habitViewModelFactory)[HabitViewModel::class.java]
+        habitViewModel.getAllHabits()
         bundle.let { }
         registerViewModelObserver()
     }
@@ -45,20 +48,8 @@ class HabitFragment : BaseFragment() {
     }
 
     override fun registerViewModelObserver() {
-        habitViewModel.nextScreen.observe(this, Observer<Screen> { nextScreen ->
-            when (nextScreen) {
-                Screen.HABIT -> {
-                    startActivity(
-                        IntentFactory.getCallingIntent(
-                            activity!!,
-                            IntentFactory.IntentType.LIVE_TRACK
-                        )
-                    )
-                }
-                else -> {
-
-                }
-            }
+        habitViewModel.allHabit.observe(this, Observer<List<Habit>> { habitList ->
         })
+
     }
 }
