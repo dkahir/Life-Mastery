@@ -43,9 +43,9 @@ class LiveTrackFragment : BaseFragment(), MapEventListener {
     ): View? {
         val fragmentParenView = inflater.inflate(R.layout.fragment_habit, container, false)
 
-        val toolbar: Toolbar = fragmentParenView.findViewById(R.id.toolbar)
+       /* val toolbar: Toolbar = fragmentParenView.findViewById(R.id.toolbar)
         toolbar.setNavigationIcon(R.drawable.black_icon);
-        (activity as BaseActivity).showActionBar(toolbar);
+        (activity as BaseActivity).showActionBar(toolbar);*/
 
         mapHandler.mapEventListener = this;
         addChildFragment(

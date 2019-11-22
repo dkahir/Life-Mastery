@@ -21,7 +21,6 @@ class DashboardActivity : NavigationActivity() {
     }
 
     override fun setUp() {
-        habitFragment = FragmentFactory.newInstance(FragmentFactory.FragmentType.HABIT)
         addFragment(
             FragmentFactory.newInstance(FragmentFactory.FragmentType.HABIT),
             FragmentFactory.FragmentType.HABIT
