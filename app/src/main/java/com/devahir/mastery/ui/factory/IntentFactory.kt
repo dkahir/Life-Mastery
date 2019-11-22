@@ -3,7 +3,7 @@ package com.devahir.mastery.ui.factory
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import com.devahir.mastery.ui.addhabit.AddHabitActivity
+import com.devahir.mastery.ui.habit.add.AddHabitActivity
 import com.devahir.mastery.ui.dashboard.DashboardActivity
 import com.devahir.mastery.ui.live.LiveTrackActivity
 import com.devahir.mastery.ui.login.LoginActivity

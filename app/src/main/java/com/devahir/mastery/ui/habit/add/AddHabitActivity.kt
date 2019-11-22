@@ -1,4 +1,4 @@
-package com.devahir.mastery.ui.addhabit
+package com.devahir.mastery.ui.habit.add
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,4 +1,4 @@
-package com.devahir.mastery.ui.addhabit
+package com.devahir.mastery.ui.habit.add
 
 import androidx.lifecycle.MutableLiveData
 import com.devahir.mastery.data.db.model.Habit

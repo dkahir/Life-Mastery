@@ -2,8 +2,8 @@ package com.devahir.mastery.ui.factory
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.devahir.mastery.ui.addhabit.AddHabitFragment
-import com.devahir.mastery.ui.dashboard.HabitFragment
+import com.devahir.mastery.ui.habit.add.AddHabitFragment
+import com.devahir.mastery.ui.habit.show.HabitFragment
 import com.devahir.mastery.ui.live.LiveTrackFragment
 import com.devahir.mastery.ui.login.LoginFragment
 

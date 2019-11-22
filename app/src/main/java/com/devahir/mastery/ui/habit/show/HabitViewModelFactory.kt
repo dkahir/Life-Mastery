@@ -1,4 +1,4 @@
-package com.devahir.mastery.ui.addhabit
+package com.devahir.mastery.ui.habit.show
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -7,15 +7,15 @@ import com.devahir.mastery.utils.rx.SchedulerProvider
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 
-class AddHabitViewModelFactory @Inject constructor(
+class HabitViewModelFactory @Inject constructor(
     private val habitRepository: HabitRepository,
     private val schedulerProvider: SchedulerProvider,
     private val compositeDisposable: CompositeDisposable
 ) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(AddHabitViewModel::class.java)) {
-            return AddHabitViewModel(
+        if (modelClass.isAssignableFrom(HabitViewModel::class.java)) {
+            return HabitViewModel(
                 habitRepository,
                 schedulerProvider,
                 compositeDisposable

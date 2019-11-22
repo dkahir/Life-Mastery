@@ -1,4 +1,4 @@
-package com.devahir.mastery.ui.dashboard
+package com.devahir.mastery.ui.habit.show
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.devahir.mastery.R
 import com.devahir.mastery.data.db.model.Habit
-import com.devahir.mastery.ui.addhabit.AddHabitActivity
+import com.devahir.mastery.ui.habit.add.AddHabitActivity
 import com.devahir.mastery.ui.base.BaseFragment
 import javax.inject.Inject
 

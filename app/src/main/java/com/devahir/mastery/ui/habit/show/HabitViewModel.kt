@@ -1,4 +1,4 @@
-package com.devahir.mastery.ui.dashboard
+package com.devahir.mastery.ui.habit.show
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
