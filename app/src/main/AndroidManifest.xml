@@ -63,7 +63,7 @@
             android:theme="@style/FullscreenTheme">
 
         </activity>
-        <activity android:name=".ui.dashboard.DashboardActivity" />
+        <activity android:name=".ui.addhabit.AddHabitActivity" />
 
         <service android:name="com.devahir.mastery.service.SyncService" />
     </application>

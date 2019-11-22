@@ -15,7 +15,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="120dp"
         android:src="@drawable/filter"
-        android:visibility="visible"
+        android:visibility="gone"
         app:backgroundTint="@color/colorAccent"
         app:layout_anchorGravity="end" />
 </merge>

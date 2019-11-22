@@ -2,6 +2,7 @@ package com.devahir.mastery.di.component;
 
 import com.devahir.mastery.di.PerActivity;
 import com.devahir.mastery.di.module.ActivityModule;
+import com.devahir.mastery.ui.addhabit.AddHabitFragment;
 import com.devahir.mastery.ui.dashboard.HabitFragment;
 import com.devahir.mastery.ui.live.LiveTrackFragment;
 import com.devahir.mastery.ui.login.LoginFragment;
@@ -18,6 +19,8 @@ public interface ActivityComponent {
     void inject(LiveTrackFragment liveTrackFragment);
 
     void inject(HabitFragment habitFragment);
+
+    void inject(AddHabitFragment addHabitFragment);
 /*
     void inject(LoginActivity activity);
 

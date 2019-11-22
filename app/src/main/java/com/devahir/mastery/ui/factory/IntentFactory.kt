@@ -3,7 +3,7 @@ package com.devahir.mastery.ui.factory
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import com.devahir.mastery.ui.dashboard.DashboardActivity
+import com.devahir.mastery.ui.addhabit.AddHabitActivity
 import com.devahir.mastery.ui.live.LiveTrackActivity
 import com.devahir.mastery.ui.login.LoginActivity
 import com.devahir.mastery.ui.welcome.WelcomeActivity
@@ -31,9 +31,9 @@ class IntentFactory {
                     }
                 }
                 IntentType.DASHBOARD -> {
-                    val intent = Intent(context, DashboardActivity::class.java)
+                    val intent = Intent(context, AddHabitActivity::class.java)
                     bundle.let {
-                        intent.putExtra(DashboardActivity::class.java.simpleName, bundle)
+                        intent.putExtra(AddHabitActivity::class.java.simpleName, bundle)
                     }
                 }
             }
