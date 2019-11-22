@@ -9,9 +9,6 @@ import androidx.lifecycle.ViewModelProviders
 import com.devahir.mastery.R
 import com.devahir.mastery.data.db.model.Habit
 import com.devahir.mastery.ui.base.BaseFragment
-import com.devahir.mastery.ui.component.BottomSheetInfoDialog
-import com.devahir.mastery.ui.factory.IntentFactory
-import com.devahir.mastery.utils.Screen
 import javax.inject.Inject
 
 class HabitFragment : BaseFragment() {

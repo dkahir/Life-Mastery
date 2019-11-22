@@ -9,7 +9,7 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.0-alpha02'
+        classpath 'com.android.tools.build:gradle:4.0.0-alpha04'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -52,8 +52,8 @@ ext {
     //Test dependencies
     junitVersion = '4.12'
     espressoVersion = '3.2.0'
-    mockitoVersion = '2.7.1'
-    room_version = "2.2.1"
+    mockitoVersion = '2.19.0'
+    room_version = "2.2.2"
     junitExtVersion = '1.1.1'
     lifecycle_version = "2.1.0"
 }

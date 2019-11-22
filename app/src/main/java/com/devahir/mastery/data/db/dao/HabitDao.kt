@@ -4,6 +4,7 @@ import androidx.room.*
 import com.devahir.mastery.data.db.model.Habit
 import io.reactivex.Maybe
 import io.reactivex.Observable
+import io.reactivex.Single
 
 @Dao
 interface HabitDao {
@@ -11,14 +12,14 @@ interface HabitDao {
     fun getAll(): Observable<List<Habit>>
 
     @Query("Select * from Habit where habitId IN (:habitId)")
-    fun getHabitById(habitId: String): Habit
+    fun getHabitById(habitId: String): Single<Habit>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(vararg habit: Habit): Maybe<Long>
+    fun insert(vararg habit: Habit): Maybe<List<Long>>
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    fun update(habit: Habit): Maybe<Long>
+    fun update(habit: Habit): Maybe<Int>
 
     @Delete
-    fun delete(user: Habit): Maybe<Long>
+    fun delete(user: Habit): Maybe<Int>
 }
