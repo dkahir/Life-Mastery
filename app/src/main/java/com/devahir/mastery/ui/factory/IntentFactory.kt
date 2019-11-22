@@ -4,13 +4,18 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.devahir.mastery.ui.addhabit.AddHabitActivity
+import com.devahir.mastery.ui.dashboard.DashboardActivity
 import com.devahir.mastery.ui.live.LiveTrackActivity
 import com.devahir.mastery.ui.login.LoginActivity
 import com.devahir.mastery.ui.welcome.WelcomeActivity
 
 class IntentFactory {
     companion object {
-        fun getCallingIntent(context: Context, intentType: IntentType, bundle: Bundle? = null): Intent {
+        fun getCallingIntent(
+            context: Context,
+            intentType: IntentType,
+            bundle: Bundle? = null
+        ): Intent {
             return when (intentType) {
                 IntentType.LOGIN -> {
                     val intent = Intent(context, LoginActivity::class.java)
@@ -31,6 +36,12 @@ class IntentFactory {
                     }
                 }
                 IntentType.DASHBOARD -> {
+                    val intent = Intent(context, DashboardActivity::class.java)
+                    bundle.let {
+                        intent.putExtra(DashboardActivity::class.java.simpleName, bundle)
+                    }
+                }
+                IntentType.ADD_HABIT -> {
                     val intent = Intent(context, AddHabitActivity::class.java)
                     bundle.let {
                         intent.putExtra(AddHabitActivity::class.java.simpleName, bundle)
@@ -41,6 +52,6 @@ class IntentFactory {
     }
 
     enum class IntentType {
-        WELCOME, LOGIN, LIVE_TRACK, DASHBOARD
+        WELCOME, LOGIN, LIVE_TRACK, DASHBOARD, ADD_HABIT
     }
 }

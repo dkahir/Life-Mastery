@@ -21,10 +21,10 @@ class AddHabitActivity : NavigationActivity() {
     }
 
     override fun setUp() {
-        habitFragment = FragmentFactory.newInstance(FragmentFactory.FragmentType.HABIT)
+        habitFragment = FragmentFactory.newInstance(FragmentFactory.FragmentType.Add_HABIT)
         addFragment(
-            FragmentFactory.newInstance(FragmentFactory.FragmentType.HABIT),
-            FragmentFactory.FragmentType.HABIT
+            FragmentFactory.newInstance(FragmentFactory.FragmentType.Add_HABIT),
+            FragmentFactory.FragmentType.Add_HABIT
         )
     }
 }

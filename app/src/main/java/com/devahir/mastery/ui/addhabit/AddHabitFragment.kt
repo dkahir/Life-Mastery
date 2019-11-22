@@ -48,32 +48,16 @@ class AddHabitFragment : BaseFragment() {
         })
 
     }
-    /*override fun onCreateOptionsMenu(menu: Menu, menuInflater : MenuInflater): Boolean {
-        menuInflater.inflate(R.menu.menu_add, menu)
-        return true
-    }*/
 
     override fun onCreateOptionsMenu(menu: Menu, menuInflater: MenuInflater) {
-        menuInflater.inflate(R.menu.menu_add, menu)
+        menuInflater.inflate(R.menu.menu_save_habit, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            /* R.id.action_settings -> {
-                 val intent = Intent(this, SettingActivity::class.java)
-                 startActivity(intent)
-                 true
-             }
-             R.id.future, R.id.opened, R.id.all -> {
-                 item.isChecked = !item.isChecked
-                 val itemName = resources.getResourceEntryName(item.itemId)
-                 try {
-                     viewModel.filter(itemName)
-                 } catch (e: IllegalArgumentException) {
-                     Log.e(this.javaClass.name, "Invalid application state: ${e.message}")
-                 }
-                 true
-             }*/
+            R.id.action_add_habit -> {
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

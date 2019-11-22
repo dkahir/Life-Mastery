@@ -6,7 +6,6 @@
     android:fitsSystemWindows="false"
     tools:context="com.devahir.mastery.ui.dashboard.DashboardActivity">
 
-    <include layout="@layout/base_content_fragment_activity" />
 
-    <include layout="@layout/content_main_habit" />
+    <include layout="@layout/content_main_add_habit" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
