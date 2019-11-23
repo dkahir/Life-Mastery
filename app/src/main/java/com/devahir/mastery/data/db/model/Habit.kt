@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey
 @Entity
 data class Habit(
     @PrimaryKey(autoGenerate = true) val habitId: Int,
+    val index: Int,
     val name: String,
     val description: String,
     val isDeleted: Boolean,

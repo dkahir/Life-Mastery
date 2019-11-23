@@ -9,5 +9,6 @@ data class Question(
     val isDeleted: Boolean,
     val question: String,
     val hint: String,
-    val category: Boolean
+    val category: Boolean,
+    val isRequired: Boolean
 )
