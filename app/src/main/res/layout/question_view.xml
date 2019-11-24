@@ -1,36 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ui.habit.add.AddHabitActivity">
 
-    <com.google.android.material.textview.MaterialTextView
+    <com.devahir.mastery.ui.component.MasteryTextView
         android:id="@+id/subject"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:padding="5dp"
         android:text="Habit Title"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Habit Title" />
+        tools:text="Habit Title123" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/answer_textInputLayout"
+        style="@style/TextInputLayoutStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/ic_line"
+        android:autofillHints=""
         android:gravity="start"
-        android:hint="Habit Title"
-        android:lines="4"
-        android:padding="5dp"
         android:textAlignment="viewStart"
+        app:counterEnabled="true"
+        app:hintEnabled="false"
+        app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+        app:hintTextColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subject"
-        tools:text="Habit Title" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/subject">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/answer_textInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:hint="Question Hint "
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:maxLines="5"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.devahir.mastery.ui.component.MasteryEditText
+        android:id="@+id/funny_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Funny TextView123"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/answer_textInputLayout"
+        tools:text="Habit Title123" />
+</merge>
