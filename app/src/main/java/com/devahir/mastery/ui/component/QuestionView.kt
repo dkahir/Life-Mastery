@@ -8,8 +8,8 @@ import com.devahir.mastery.R
 import com.google.android.material.textfield.TextInputLayout
 
 class QuestionView : ConstraintLayout {
-    constructor(context: Context) : this(context, null)
-    constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
+    constructor(context: Context) : super(context)
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
 
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
         context,
@@ -23,7 +23,7 @@ class QuestionView : ConstraintLayout {
         LayoutInflater.from(context)
             .inflate(R.layout.question_view, this, true)
         //addView(view)
-       // hint = ""
+        // hint = ""
     }
 
     public fun setQuestionHint(hint: String) {
