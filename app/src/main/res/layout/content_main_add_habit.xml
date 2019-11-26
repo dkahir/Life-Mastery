@@ -21,37 +21,16 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Habit Title" />
 
-        <!--<com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/content"
-            style="@style/TextInputLayoutStyle"
+        <com.devahir.mastery.ui.component.QuestionCardView
+            android:id="@+id/subject2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:autofillHints=""
-            android:background="@drawable/ic_line"
-            android:gravity="start"
-            android:hint="Habit Title"
-            android:lines="4"
-            android:padding="5dp"
-            android:textAlignment="viewStart"
-            app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
-            app:hintTextColor="@color/colorAccent"
+            android:text="Habit Title"
+            android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/subject"
-            app:passwordToggleEnabled="true"
-            tools:text="Habit Title">
+            app:layout_constraintTop_toBottomOf="@id/subject"
+            tools:text="Habit Title" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password_textInputEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:singleLine="true"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-        </com.google.android.material.textfield.TextInputLayout>-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 </merge>

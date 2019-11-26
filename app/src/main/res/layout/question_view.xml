@@ -8,39 +8,41 @@
     tools:context=".ui.habit.add.AddHabitActivity">
 
     <com.devahir.mastery.ui.component.MasteryTextView
-        android:id="@+id/subject"
+        android:id="@+id/question_title_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:text="Habit Title"
-        android:textStyle="italic"
+        android:text="Question Title"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Habit Title123" />
+        tools:text="Question Title" />
+
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/answer_textInputLayout"
+        android:id="@+id/answer_text_input_layout"
         style="@style/TextInputLayoutStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:autofillHints=""
         android:gravity="start"
         android:textAlignment="viewStart"
-        app:counterEnabled="true"
         app:hintEnabled="false"
         app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
         app:hintTextColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subject">
+        app:layout_constraintTop_toBottomOf="@+id/question_title_text_view">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/answer_textInputEditText"
+        <com.devahir.mastery.ui.component.MasteryEditText
+            android:id="@+id/answer_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
-            android:hint="Question Hint "
+            android:hint=" Question Hint \n new line \n third line"
             android:inputType="textMultiLine"
             android:lines="3"
             android:maxLines="5"
@@ -51,15 +53,26 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.devahir.mastery.ui.component.MasteryEditText
-        android:id="@+id/funny_text_view"
+    <com.devahir.mastery.ui.component.MasteryTextView
+        android:id="@+id/funny_comment_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:text="Funny TextView123"
+        android:text="Funny textview "
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/answer_textInputLayout"
-         />
+        app:layout_constraintTop_toBottomOf="@id/answer_text_input_layout"
+        tools:text="Funny text view" />
+
+    <com.devahir.mastery.ui.component.MasteryTextView
+        android:id="@+id/answer_status_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="typing"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@id/answer_text_input_layout"
+        app:layout_constraintTop_toBottomOf="@id/answer_text_input_layout"
+        tools:text="typing" />
 </merge>
