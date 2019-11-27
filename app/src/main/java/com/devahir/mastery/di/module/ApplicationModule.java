@@ -2,15 +2,19 @@ package com.devahir.mastery.di.module;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.devahir.mastery.R;
 import com.devahir.mastery.data.DataManager;
 import com.devahir.mastery.data.DataManagerImpl;
 import com.devahir.mastery.data.db.MasteryAppDatabase;
-import com.devahir.mastery.data.db.model.Habit;
+import com.devahir.mastery.data.db.model.HabitCategory;
+import com.devahir.mastery.data.db.model.HabitCategoryQuestionAssoc;
+import com.devahir.mastery.data.db.model.Question;
 import com.devahir.mastery.data.network.ApiHeader;
 import com.devahir.mastery.data.network.ApiHelper;
 import com.devahir.mastery.data.network.AppApiHelper;
@@ -27,6 +31,7 @@ import com.devahir.mastery.di.ApplicationContext;
 import com.devahir.mastery.di.DatabaseInfo;
 import com.devahir.mastery.di.PreferenceInfo;
 import com.devahir.mastery.utils.AppConstants;
+import com.devahir.mastery.utils.JSONUtils;
 
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -96,7 +101,32 @@ public class ApplicationModule {
                 Executors.newSingleThreadScheduledExecutor().execute(new Runnable() {
                     @Override
                     public void run() {
-                       //List <Long> id =  masteryAppDatabase.habitDao().insert(new Habit(1, 1, "Happiness", "Not dependent on anyone", false, false));
+                        String habitCategoryJsonString = JSONUtils.getJsonFileAsClass(provideContext().getResources(),
+                                R.raw.habitcategory, HabitCategory.class);
+                        HabitCategory[] habitCategory = JSONUtils.constructUsingGson(HabitCategory[].class, habitCategoryJsonString);
+                        List<Long> categoryIds = masteryAppDatabase.habitCategoryDao().insert(habitCategory);
+                        Log.d("ApplicationModule", "HabitCategoryInserted ID is " + categoryIds);
+                        List<HabitCategory> allCate = masteryAppDatabase.habitCategoryDao().getAll();
+                        Log.d("ApplicationModule", "HabitCategoryInserted ID is " + categoryIds + "data is " + allCate.get(0).toString());
+
+                        String questionsJsonString = JSONUtils.getJsonFileAsClass(provideContext().getResources(),
+                                R.raw.questions, HabitCategory.class);
+                        Question[] questions = JSONUtils.constructUsingGson(Question[].class, questionsJsonString);
+
+
+                        List<Long> questionsIds = masteryAppDatabase.questionDao().insert(questions);
+                        Log.d("ApplicationModule", "Question Inserted ID is " + questionsIds);
+                        List<Question> allquestions = masteryAppDatabase.questionDao().getAll();
+                        Log.d("ApplicationModule", "Question Inserted ID is " + categoryIds + "data is " + allquestions.get(0).toString());
+
+
+                        String categoryQuestionsAssoc = JSONUtils.getJsonFileAsClass(provideContext().getResources(),
+                                R.raw.habitcategoryquestionsassoc, HabitCategoryQuestionAssoc.class);
+                        HabitCategoryQuestionAssoc[] categoryQuestionAssocs = JSONUtils.constructUsingGson(HabitCategoryQuestionAssoc[].class, categoryQuestionsAssoc);
+                        List<Long> categoryQuestionsIds = masteryAppDatabase.habitCategoryQuestionAssocDao().insert(categoryQuestionAssocs);
+                        Log.d("ApplicationModule", "HabitCategoryQuestionAssoc Inserted ID is " + categoryQuestionsIds);
+                        List<HabitCategoryQuestionAssoc> allCategoryQuestionsAssocs = masteryAppDatabase.habitCategoryQuestionAssocDao().getAll();
+                        Log.d("ApplicationModule", "HabitCategoryQuestionAssoc Inserted ID is " + categoryQuestionsIds + "data is " + allCategoryQuestionsAssocs.get(0).toString());
                     }
                 });
             }

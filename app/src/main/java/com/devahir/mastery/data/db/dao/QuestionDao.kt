@@ -8,9 +8,9 @@ import io.reactivex.Observable
 @Dao
 interface QuestionDao : BaseDao<Question> {
     @Query("Select * from Question")
-    fun getAll(): Observable<List<Question>>
+    fun getAll(): List<Question>
 
-    @Query("Select * from Question where questionId IN (:questionId)")
+    @Query("Select * from Question where id IN (:questionId)")
     fun getQuestionById(questionId: String): Question
 
 }

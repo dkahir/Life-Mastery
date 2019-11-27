@@ -9,15 +9,16 @@ import androidx.room.PrimaryKey
         entity = HabitCategory::class,
         parentColumns = arrayOf("id"),
         childColumns = arrayOf("categoryId")
+    ), ForeignKey(
+        entity = Question::class,
+        parentColumns = arrayOf("id"),
+        childColumns = arrayOf("questionId")
     )]
 )
-data class Habit(
+data class HabitCategoryQuestionAssoc(
     @PrimaryKey val id: Int,
     val categoryId: Int,
-    val index: Int,
-    val name: String,
-    val description: String,
-    val isDeleted: Boolean,
-    val promised: Boolean
+    val questionId: Int,
+    val showOnAdd: Boolean
 
 )

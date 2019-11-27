@@ -11,7 +11,7 @@ interface HabitDao : BaseDao<Habit> {
     @Query("Select * from Habit")
     fun getAll(): Observable<List<Habit>>
 
-    @Query("Select * from Habit where habitId IN (:habitId)")
+    @Query("Select * from Habit where id IN (:habitId)")
     fun getHabitById(habitId: String): Single<Habit>
 
 }

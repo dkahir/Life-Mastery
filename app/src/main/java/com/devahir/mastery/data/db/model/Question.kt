@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Question(
-    @PrimaryKey(autoGenerate = true) val questionId: Int,
+    @PrimaryKey val id: Int,
     val question: String,
     val hint: String,
     val category: String, /// Reminder -- Time Place selection Every Category should have a component to draw.
