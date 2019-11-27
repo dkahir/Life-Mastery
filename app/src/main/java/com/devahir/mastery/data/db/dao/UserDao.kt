@@ -1,11 +1,12 @@
 package com.devahir.mastery.data.db.dao
 
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Query
 import com.devahir.mastery.data.db.model.User
 import io.reactivex.Observable
 
 @Dao
-interface UserDao {
+interface UserDao : BaseDao<User> {
     @Query("Select * from User")
     fun getAll(): Observable<List<User>>
 
@@ -18,9 +19,4 @@ interface UserDao {
     @Query("select * from User where userName IN (:userNameList)")
     fun getUsersByUsername(userNameList: List<String>): List<User>
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(vararg user: User)
-
-    @Delete
-    fun delete(user: User)
 }

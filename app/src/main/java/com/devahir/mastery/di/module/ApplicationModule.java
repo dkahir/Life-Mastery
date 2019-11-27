@@ -96,7 +96,7 @@ public class ApplicationModule {
                 Executors.newSingleThreadScheduledExecutor().execute(new Runnable() {
                     @Override
                     public void run() {
-                       List <Long> id =  masteryAppDatabase.habitDao().insert(new Habit(1, 1, "Happiness", "Not dependent on anyone", false, false));
+                       //List <Long> id =  masteryAppDatabase.habitDao().insert(new Habit(1, 1, "Happiness", "Not dependent on anyone", false, false));
                     }
                 });
             }

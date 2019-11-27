@@ -24,7 +24,7 @@
     "question": "Time and location",
     "hint": "Answer hint3",
     "category": "Reminder",
-    "explanation": "Research suggestes if time and location is decided more likley you are gonna do this. ",
+    "explanation": "Research suggests if time and location is decided more likely you are gonna do this. ",
     "answerMaxLines": 1,
     "isRequired": true,
     "isDeleted": false
@@ -34,7 +34,7 @@
     "question": "Questions4",
     "hint": "Answer hint4",
     "category": "Habit4",
-    "explanation": "Scientfiic explanation4",
+    "explanation": "Scientific explanation4",
     "answerMaxLines": 3,
     "isRequired": false,
     "isDeleted": false
