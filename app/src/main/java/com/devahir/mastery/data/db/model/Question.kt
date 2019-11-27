@@ -6,9 +6,11 @@ import androidx.room.PrimaryKey
 @Entity
 data class Question(
     @PrimaryKey(autoGenerate = true) val questionId: Int,
-    val isDeleted: Boolean,
     val question: String,
     val hint: String,
-    val category: Boolean,
-    val isRequired: Boolean
+    val category: String, /// Reminder -- Time Place selection Every Category should have a component to draw.
+    val explanation: String,
+    val answerMaxLines: Int,
+    val isRequired: Boolean,
+    val isDeleted: Boolean
 )

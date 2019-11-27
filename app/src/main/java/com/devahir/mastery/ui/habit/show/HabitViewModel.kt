@@ -1,11 +1,9 @@
 package com.devahir.mastery.ui.habit.show
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.devahir.mastery.data.db.model.Habit
 import com.devahir.mastery.data.repository.HabitRepository
 import com.devahir.mastery.ui.base.BaseViewModel
-import com.devahir.mastery.utils.Screen
 import com.devahir.mastery.utils.rx.SchedulerProvider
 import io.reactivex.disposables.CompositeDisposable
 

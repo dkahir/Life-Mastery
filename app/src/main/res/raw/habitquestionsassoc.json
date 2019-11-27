@@ -1,0 +1,32 @@
+[
+  {
+    "habitQuestionAssocId": 1,
+    "categoryId": 1,
+    "questionId": 1,
+    "showOnAdd": true
+  },
+  {
+    "habitQuestionAssocId": 2,
+    "categoryId": 1,
+    "questionId": 2,
+    "showOnAdd": true
+  },
+  {
+    "habitQuestionAssocId": 3,
+    "categoryId": 1,
+    "questionId": 3,
+    "showOnAdd": true
+  },
+  {
+    "habitQuestionAssocId": 4,
+    "categoryId": 1,
+    "questionId": 4,
+    "showOnAdd": true
+  },
+  {
+    "habitQuestionAssocId": 5,
+    "categoryId": 1,
+    "questionId": 5,
+    "showOnAdd": true
+  }
+]

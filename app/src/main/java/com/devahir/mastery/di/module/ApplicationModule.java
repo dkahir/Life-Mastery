@@ -4,10 +4,13 @@ import android.app.Application;
 import android.content.Context;
 
 import androidx.room.Room;
+import androidx.room.RoomDatabase;
+import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.devahir.mastery.data.DataManager;
 import com.devahir.mastery.data.DataManagerImpl;
 import com.devahir.mastery.data.db.MasteryAppDatabase;
+import com.devahir.mastery.data.db.model.Habit;
 import com.devahir.mastery.data.network.ApiHeader;
 import com.devahir.mastery.data.network.ApiHelper;
 import com.devahir.mastery.data.network.AppApiHelper;
@@ -25,6 +28,9 @@ import com.devahir.mastery.di.DatabaseInfo;
 import com.devahir.mastery.di.PreferenceInfo;
 import com.devahir.mastery.utils.AppConstants;
 
+import java.util.List;
+import java.util.concurrent.Executors;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -36,6 +42,7 @@ import retrofit2.Retrofit;
 public class ApplicationModule {
 
     private final Application mApplication;
+    private MasteryAppDatabase masteryAppDatabase;
 
     public ApplicationModule(Application application) {
         mApplication = application;
@@ -79,12 +86,25 @@ public class ApplicationModule {
     @Provides
     @Singleton
     MasteryAppDatabase provideMasteryAppDatabase() {
-        return Room.databaseBuilder(
+        masteryAppDatabase = Room.databaseBuilder(
                 provideContext(),
                 MasteryAppDatabase.class,
                 AppConstants.DB_NAME
-        ).build();
+        ).addCallback(new RoomDatabase.Callback() {
+            public void onCreate(SupportSQLiteDatabase db) {
+                super.onCreate(db);
+                Executors.newSingleThreadScheduledExecutor().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                       List <Long> id =  masteryAppDatabase.habitDao().insert(new Habit(1, 1, "Happiness", "Not dependent on anyone", false, false));
+                    }
+                });
+            }
+        }).build();
+        return masteryAppDatabase;
     }
+
+    // private static RoomDatabase.Callback dbCallback =
 
     @Provides
     @Singleton

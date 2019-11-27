@@ -15,7 +15,7 @@ interface HabitDao {
     fun getHabitById(habitId: String): Single<Habit>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(vararg habit: Habit): Maybe<List<Long>>
+    fun insert(vararg habit: Habit): List<Long>
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     fun update(habit: Habit): Maybe<Int>
